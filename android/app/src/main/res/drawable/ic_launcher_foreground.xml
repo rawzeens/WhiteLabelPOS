@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A plain till receipt: no shop name, so any shop can use it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,30 h36 v46 l-6,-4 l-6,4 l-6,-4 l-6,4 l-6,-4 l-6,4 z" />
+    <path
+        android:fillColor="#1F2937"
+        android:pathData="M42,38 h24 v3 h-24 z M42,45 h16 v3 h-16 z M42,52 h20 v3 h-20 z M42,61 h24 v4 h-24 z" />
+</vector>
