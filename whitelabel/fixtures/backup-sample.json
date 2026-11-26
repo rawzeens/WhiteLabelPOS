@@ -1,0 +1,248 @@
+{
+  "format": "whitelabel-pos",
+  "version": 1,
+  "setupDone": true,
+  "brand": {
+    "name": "Kopi Pagi",
+    "tagline": "Coffee, toast & good mornings",
+    "logo": "",
+    "primary": "#6F4E37",
+    "accent": "#E0A43B",
+    "design": "cafe"
+  },
+  "business": {
+    "type": "cafe",
+    "phone": "012-345 6789",
+    "address": "12 Jalan Bunga Raya, Kuala Lumpur",
+    "regNo": "SSM 202401012345",
+    "currency": "MYR",
+    "taxName": "SST",
+    "taxRate": 600,
+    "taxInclusive": false,
+    "cashRoundTo": 5,
+    "footer": "Thank you! See you tomorrow morning."
+  },
+  "pin": "",
+  "categories": [
+    {
+      "id": "c-1",
+      "name": "Coffee"
+    },
+    {
+      "id": "c-2",
+      "name": "Toast & bakes"
+    }
+  ],
+  "products": [
+    {
+      "id": "p-1",
+      "name": "Espresso",
+      "price": 650,
+      "category": "c-1",
+      "icon": "☕",
+      "color": "#6F4E37",
+      "sku": "",
+      "trackStock": false,
+      "stock": 0
+    },
+    {
+      "id": "p-3",
+      "name": "Latte",
+      "price": 1100,
+      "category": "c-1",
+      "icon": "☕",
+      "color": "#A47551",
+      "sku": "",
+      "trackStock": false,
+      "stock": 0
+    },
+    {
+      "id": "p-10",
+      "name": "Kaya Butter Toast",
+      "price": 550,
+      "category": "c-2",
+      "icon": "🍞",
+      "color": "#E9C46A",
+      "sku": "",
+      "trackStock": true,
+      "stock": 20
+    },
+    {
+      "id": "p-11",
+      "name": "Croissant",
+      "price": 900,
+      "category": "c-2",
+      "icon": "🥐",
+      "color": "#D4A373",
+      "sku": "KP-CR",
+      "trackStock": true,
+      "stock": 6
+    }
+  ],
+  "sales": [
+    {
+      "id": "s-1",
+      "number": 1001,
+      "time": 1763596800000,
+      "lines": [
+        {
+          "product": "p-3",
+          "name": "Latte",
+          "price": 1100,
+          "qty": 2
+        },
+        {
+          "product": "p-11",
+          "name": "Croissant",
+          "price": 900,
+          "qty": 1
+        }
+      ],
+      "discountType": "none",
+      "discountValue": 0,
+      "subtotal": 3100,
+      "discount": 0,
+      "tax": 186,
+      "total": 3286,
+      "rounding": -1,
+      "due": 3285,
+      "taxName": "SST",
+      "taxRate": 600,
+      "taxInclusive": false,
+      "method": "cash",
+      "paid": 5000,
+      "change": 1715,
+      "note": "",
+      "refunded": false,
+      "refundTime": 0
+    },
+    {
+      "id": "s-2",
+      "number": 1002,
+      "time": 1763600400000,
+      "lines": [
+        {
+          "product": "p-1",
+          "name": "Espresso",
+          "price": 650,
+          "qty": 1
+        }
+      ],
+      "discountType": "none",
+      "discountValue": 0,
+      "subtotal": 650,
+      "discount": 0,
+      "tax": 39,
+      "total": 689,
+      "rounding": 0,
+      "due": 689,
+      "taxName": "SST",
+      "taxRate": 600,
+      "taxInclusive": false,
+      "method": "card",
+      "paid": 689,
+      "change": 0,
+      "note": "",
+      "refunded": false,
+      "refundTime": 0
+    },
+    {
+      "id": "s-3",
+      "number": 1003,
+      "time": 1763604000000,
+      "lines": [
+        {
+          "product": "p-10",
+          "name": "Kaya Butter Toast",
+          "price": 550,
+          "qty": 2
+        },
+        {
+          "product": "p-3",
+          "name": "Latte",
+          "price": 1100,
+          "qty": 1
+        }
+      ],
+      "discountType": "percent",
+      "discountValue": 1000,
+      "subtotal": 2200,
+      "discount": 220,
+      "tax": 119,
+      "total": 2099,
+      "rounding": 0,
+      "due": 2099,
+      "taxName": "SST",
+      "taxRate": 600,
+      "taxInclusive": false,
+      "method": "qr",
+      "paid": 2099,
+      "change": 0,
+      "note": "",
+      "refunded": false,
+      "refundTime": 0
+    },
+    {
+      "id": "s-4",
+      "number": 1004,
+      "time": 1763607600000,
+      "lines": [
+        {
+          "product": "p-11",
+          "name": "Croissant",
+          "price": 900,
+          "qty": 1
+        }
+      ],
+      "discountType": "none",
+      "discountValue": 0,
+      "subtotal": 900,
+      "discount": 0,
+      "tax": 54,
+      "total": 954,
+      "rounding": 1,
+      "due": 955,
+      "taxName": "SST",
+      "taxRate": 600,
+      "taxInclusive": false,
+      "method": "cash",
+      "paid": 1000,
+      "change": 45,
+      "note": "",
+      "refunded": true,
+      "refundTime": 1763611200000
+    },
+    {
+      "id": "s-5",
+      "number": 1005,
+      "time": 1763676000000,
+      "lines": [
+        {
+          "product": "p-3",
+          "name": "Latte",
+          "price": 1100,
+          "qty": 1
+        }
+      ],
+      "discountType": "none",
+      "discountValue": 0,
+      "subtotal": 1100,
+      "discount": 0,
+      "tax": 66,
+      "total": 1166,
+      "rounding": 0,
+      "due": 1166,
+      "taxName": "SST",
+      "taxRate": 600,
+      "taxInclusive": false,
+      "method": "ewallet",
+      "paid": 1166,
+      "change": 0,
+      "note": "",
+      "refunded": false,
+      "refundTime": 0
+    }
+  ],
+  "nextNumber": 1006,
+  "nextId": 20
+}

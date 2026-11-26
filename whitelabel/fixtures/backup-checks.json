@@ -1,0 +1,49 @@
+{
+  "about": "Checks for backup-sample.json: both apps must read it, find these values, and produce this report for the given time range.",
+  "brandName": "Kopi Pagi",
+  "design": "cafe",
+  "products": 4,
+  "categories": 2,
+  "salesCount": 5,
+  "nextNumber": 1006,
+  "report": {
+    "from": 1763568000000,
+    "to": 1763654400000,
+    "expect": {
+      "sales": 3,
+      "gross": 6073,
+      "average": 2024,
+      "tax": 344,
+      "discount": 220,
+      "refunds": 1,
+      "refunded": 955,
+      "byMethod": {
+        "cash": 3285,
+        "card": 689,
+        "qr": 2099
+      },
+      "top": [
+        {
+          "name": "Latte",
+          "qty": 3,
+          "amount": 3300
+        },
+        {
+          "name": "Kaya Butter Toast",
+          "qty": 2,
+          "amount": 1100
+        },
+        {
+          "name": "Croissant",
+          "qty": 1,
+          "amount": 900
+        },
+        {
+          "name": "Espresso",
+          "qty": 1,
+          "amount": 650
+        }
+      ]
+    }
+  }
+}

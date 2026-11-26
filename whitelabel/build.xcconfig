@@ -1,0 +1,7 @@
+// White-label build settings: change these to ship the app under another name.
+// Android reads this file in android/app/build.gradle.kts; the iPhone project uses it as its xcconfig.
+// Keep the "KEY = value" form, one per line.
+APP_NAME = Shop POS
+APP_ID = com.r4xn.whitelabelpos
+APP_VERSION = 1.0.0
+APP_BUILD = 1

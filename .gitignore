@@ -1,0 +1,22 @@
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.iml
+.idea/
+android/captures/
+.kotlin/
+
+# iPhone
+ios/*.xcodeproj/
+ios/build/
+ios/POSCore/.build/
+ios/POSCore/.swiftpm/
+xcuserdata/
+DerivedData/
+
+# Everything
+dist/
+.DS_Store
+*.log

@@ -1,0 +1,17 @@
+{
+  "about": "Money the shop can sell in. Amounts are always whole numbers in the smallest unit (sen, cents). cashRoundTo is the default cash rounding step in that unit (5 = round cash totals to the nearest 5 sen); 0 means no rounding. taxName is the usual name of the sales tax.",
+  "currencies": [
+    { "code": "MYR", "name": "Malaysian ringgit", "symbol": "RM", "decimals": 2, "cashRoundTo": 5, "taxName": "SST" },
+    { "code": "SGD", "name": "Singapore dollar", "symbol": "S$", "decimals": 2, "cashRoundTo": 0, "taxName": "GST" },
+    { "code": "BND", "name": "Brunei dollar", "symbol": "B$", "decimals": 2, "cashRoundTo": 0, "taxName": "Tax" },
+    { "code": "IDR", "name": "Indonesian rupiah", "symbol": "Rp", "decimals": 0, "cashRoundTo": 0, "taxName": "PPN" },
+    { "code": "THB", "name": "Thai baht", "symbol": "฿", "decimals": 2, "cashRoundTo": 0, "taxName": "VAT" },
+    { "code": "PHP", "name": "Philippine peso", "symbol": "₱", "decimals": 2, "cashRoundTo": 0, "taxName": "VAT" },
+    { "code": "AUD", "name": "Australian dollar", "symbol": "A$", "decimals": 2, "cashRoundTo": 5, "taxName": "GST" },
+    { "code": "USD", "name": "US dollar", "symbol": "$", "decimals": 2, "cashRoundTo": 0, "taxName": "Sales tax" },
+    { "code": "EUR", "name": "Euro", "symbol": "€", "decimals": 2, "cashRoundTo": 0, "taxName": "VAT" },
+    { "code": "GBP", "name": "British pound", "symbol": "£", "decimals": 2, "cashRoundTo": 0, "taxName": "VAT" },
+    { "code": "INR", "name": "Indian rupee", "symbol": "₹", "decimals": 2, "cashRoundTo": 0, "taxName": "GST" },
+    { "code": "AED", "name": "UAE dirham", "symbol": "AED", "decimals": 2, "cashRoundTo": 0, "taxName": "VAT" }
+  ]
+}

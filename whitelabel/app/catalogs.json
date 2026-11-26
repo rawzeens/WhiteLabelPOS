@@ -1,0 +1,168 @@
+{
+  "about": "Starter products for each kind of business, and the demo shop used for 'Try a demo shop'. Prices are in cents/sen (2 decimals). For a currency with no decimals multiply by 100. An empty icon means the app shows the product's initials.",
+  "types": [
+    {
+      "id": "cafe",
+      "name": "Café & bakery",
+      "icon": "☕",
+      "demo": {
+        "name": "Kopi Pagi",
+        "tagline": "Coffee, toast & good mornings",
+        "primary": "#6F4E37",
+        "accent": "#E0A43B",
+        "design": "cafe",
+        "phone": "012-345 6789",
+        "address": "12 Jalan Bunga Raya, Kuala Lumpur",
+        "regNo": "SSM 202401012345",
+        "footer": "Thank you! See you tomorrow morning."
+      },
+      "categories": ["Coffee", "Tea & more", "Toast & bakes"],
+      "products": [
+        { "name": "Espresso", "price": 650, "category": 0, "icon": "☕", "color": "#6F4E37" },
+        { "name": "Americano", "price": 800, "category": 0, "icon": "☕", "color": "#5B3A29" },
+        { "name": "Latte", "price": 1100, "category": 0, "icon": "☕", "color": "#A47551" },
+        { "name": "Cappuccino", "price": 1100, "category": 0, "icon": "☕", "color": "#8B5E3C" },
+        { "name": "Spanish Latte", "price": 1300, "category": 0, "icon": "☕", "color": "#C08552" },
+        { "name": "Teh Tarik", "price": 450, "category": 1, "icon": "🍵", "color": "#D4A373" },
+        { "name": "Matcha Latte", "price": 1300, "category": 1, "icon": "🍵", "color": "#6A994E" },
+        { "name": "Iced Chocolate", "price": 1200, "category": 1, "icon": "🍫", "color": "#5E3023" },
+        { "name": "Fresh Orange", "price": 1000, "category": 1, "icon": "🍊", "color": "#F4A261" },
+        { "name": "Kaya Butter Toast", "price": 550, "category": 2, "icon": "🍞", "color": "#E9C46A" },
+        { "name": "Croissant", "price": 900, "category": 2, "icon": "🥐", "color": "#D4A373" },
+        { "name": "Banana Cake", "price": 750, "category": 2, "icon": "🍰", "color": "#E9B949" },
+        { "name": "Chocolate Muffin", "price": 800, "category": 2, "icon": "🧁", "color": "#6D4C41" },
+        { "name": "Half-boiled Eggs", "price": 400, "category": 2, "icon": "🥚", "color": "#F2CC8F" }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Restaurant & food stall",
+      "icon": "🍔",
+      "demo": {
+        "name": "Bara Burger",
+        "tagline": "Flame-grilled. Fast.",
+        "primary": "#D62828",
+        "accent": "#FCBF49",
+        "design": "street",
+        "phone": "011-2233 4455",
+        "address": "Lot 7, Food Court Seksyen 14, Petaling Jaya",
+        "regNo": "SSM 202301098765",
+        "footer": "Order again at the counter. Thanks!"
+      },
+      "categories": ["Burgers", "Sides", "Drinks", "Sets"],
+      "products": [
+        { "name": "Classic Beef", "price": 1290, "category": 0, "icon": "🍔", "color": "#D62828" },
+        { "name": "Double Cheese", "price": 1690, "category": 0, "icon": "🍔", "color": "#F77F00" },
+        { "name": "Crispy Chicken", "price": 1190, "category": 0, "icon": "🍗", "color": "#E76F51" },
+        { "name": "Smash Burger", "price": 1490, "category": 0, "icon": "🍔", "color": "#9D0208" },
+        { "name": "Fries", "price": 590, "category": 1, "icon": "🍟", "color": "#E9A23B" },
+        { "name": "Cheesy Fries", "price": 790, "category": 1, "icon": "🧀", "color": "#F4A261" },
+        { "name": "Onion Rings", "price": 690, "category": 1, "icon": "🧅", "color": "#BC6C25" },
+        { "name": "Wings (6)", "price": 1290, "category": 1, "icon": "🍗", "color": "#BC4749" },
+        { "name": "Cola", "price": 390, "category": 2, "icon": "🥤", "color": "#264653" },
+        { "name": "Iced Lemon Tea", "price": 450, "category": 2, "icon": "🍋", "color": "#2A9D8F" },
+        { "name": "Mineral Water", "price": 250, "category": 2, "icon": "💧", "color": "#457B9D" },
+        { "name": "Milkshake", "price": 990, "category": 2, "icon": "🥛", "color": "#E56B6F" },
+        { "name": "Burger Combo", "price": 1890, "category": 3, "icon": "🍱", "color": "#6A040F" },
+        { "name": "Kids Meal", "price": 1290, "category": 3, "icon": "🎈", "color": "#1D3557" }
+      ]
+    },
+    {
+      "id": "retail",
+      "name": "Boutique & retail",
+      "icon": "👗",
+      "demo": {
+        "name": "Lily & Co",
+        "tagline": "Clothing and small things",
+        "primary": "#1F1F1F",
+        "accent": "#B08D57",
+        "design": "atelier",
+        "phone": "03-7788 9900",
+        "address": "G-12 Bangsar Village, Kuala Lumpur",
+        "regNo": "SSM 202201055501",
+        "footer": "Exchanges within 7 days with this receipt."
+      },
+      "categories": ["Tops", "Bottoms", "Accessories"],
+      "products": [
+        { "name": "Linen Shirt", "price": 12900, "category": 0, "icon": "👔", "color": "#8D8D8D", "sku": "LC-TP-01", "stock": 12 },
+        { "name": "Cotton Tee", "price": 5900, "category": 0, "icon": "👕", "color": "#A3A3A3", "sku": "LC-TP-02", "stock": 30 },
+        { "name": "Knit Cardigan", "price": 15900, "category": 0, "icon": "🧥", "color": "#A68A64", "sku": "LC-TP-03", "stock": 4 },
+        { "name": "Silk Blouse", "price": 18900, "category": 0, "icon": "👚", "color": "#B5A397", "sku": "LC-TP-04", "stock": 2 },
+        { "name": "Wide Trousers", "price": 13900, "category": 1, "icon": "👖", "color": "#4A4E69", "sku": "LC-BT-01", "stock": 9 },
+        { "name": "Pleated Skirt", "price": 11900, "category": 1, "icon": "👗", "color": "#9A8C98", "sku": "LC-BT-02", "stock": 0 },
+        { "name": "Denim Jeans", "price": 14900, "category": 1, "icon": "👖", "color": "#22577A", "sku": "LC-BT-03", "stock": 15 },
+        { "name": "Canvas Tote", "price": 4900, "category": 2, "icon": "👜", "color": "#C9ADA7", "sku": "LC-AC-01", "stock": 25 },
+        { "name": "Leather Belt", "price": 6900, "category": 2, "icon": "", "color": "#6B4F3A", "sku": "LC-AC-02", "stock": 8 },
+        { "name": "Gold Earrings", "price": 8900, "category": 2, "icon": "💍", "color": "#B08D57", "sku": "LC-AC-03", "stock": 6 },
+        { "name": "Silk Scarf", "price": 7900, "category": 2, "icon": "🧣", "color": "#E5989B", "sku": "LC-AC-04", "stock": 10 },
+        { "name": "Sunglasses", "price": 9900, "category": 2, "icon": "🕶", "color": "#333333", "sku": "LC-AC-05", "stock": 7 }
+      ]
+    },
+    {
+      "id": "grocery",
+      "name": "Mini market & grocery",
+      "icon": "🛒",
+      "demo": {
+        "name": "Segar Mart",
+        "tagline": "Fresh every day, open till late",
+        "primary": "#15803D",
+        "accent": "#F59E0B",
+        "design": "fresh",
+        "phone": "04-262 1188",
+        "address": "88 Lebuh Pantai, George Town, Penang",
+        "regNo": "SSM 201901033221",
+        "footer": "Bring your own bag and save the earth!"
+      },
+      "categories": ["Fresh", "Pantry", "Drinks", "Household"],
+      "products": [
+        { "name": "Bananas (1 kg)", "price": 590, "category": 0, "icon": "🍌", "color": "#E9C46A", "stock": 40 },
+        { "name": "Eggs (10)", "price": 690, "category": 0, "icon": "🥚", "color": "#E6B980", "stock": 24 },
+        { "name": "Tomatoes (500 g)", "price": 450, "category": 0, "icon": "🍅", "color": "#E63946", "stock": 18 },
+        { "name": "Spinach", "price": 300, "category": 0, "icon": "🥬", "color": "#2A9D8F", "stock": 15 },
+        { "name": "Chicken (1 kg)", "price": 1290, "category": 0, "icon": "🍗", "color": "#E76F51", "stock": 10 },
+        { "name": "Rice (5 kg)", "price": 2290, "category": 1, "icon": "🍚", "color": "#A3B18A", "stock": 20 },
+        { "name": "Instant Noodles (5)", "price": 590, "category": 1, "icon": "🍜", "color": "#F4A261", "stock": 50 },
+        { "name": "Bread", "price": 380, "category": 1, "icon": "🍞", "color": "#DDA15E", "stock": 12 },
+        { "name": "Sugar (1 kg)", "price": 280, "category": 1, "icon": "", "color": "#8E9AAF", "stock": 30 },
+        { "name": "Mineral Water 1.5 L", "price": 180, "category": 2, "icon": "💧", "color": "#48A9C5", "stock": 60 },
+        { "name": "Soy Milk", "price": 350, "category": 2, "icon": "🥛", "color": "#B7B7A4", "stock": 3 },
+        { "name": "Orange Juice", "price": 690, "category": 2, "icon": "🍊", "color": "#F77F00", "stock": 14 },
+        { "name": "Green Tea", "price": 290, "category": 2, "icon": "🍵", "color": "#6A994E", "stock": 36 },
+        { "name": "Dish Soap", "price": 490, "category": 3, "icon": "🧽", "color": "#90BE6D", "stock": 22 },
+        { "name": "Tissue (4 rolls)", "price": 790, "category": 3, "icon": "🧻", "color": "#8D99AE", "stock": 16 },
+        { "name": "Detergent", "price": 1590, "category": 3, "icon": "🧺", "color": "#4361EE", "stock": 9 }
+      ]
+    },
+    {
+      "id": "beauty",
+      "name": "Salon & services",
+      "icon": "💅",
+      "demo": {
+        "name": "Glow Studio",
+        "tagline": "Nails, lashes & brows",
+        "primary": "#E0457B",
+        "accent": "#FFB3C6",
+        "design": "midnight",
+        "phone": "017-888 2020",
+        "address": "Level 2, 33 Jalan Telawi, Bangsar",
+        "regNo": "SSM 202501077007",
+        "footer": "Book your next visit at the counter ✨"
+      },
+      "categories": ["Nails", "Lashes & brows", "Hair", "Products"],
+      "products": [
+        { "name": "Manicure", "price": 4500, "category": 0, "icon": "💅", "color": "#E0457B" },
+        { "name": "Pedicure", "price": 5500, "category": 0, "icon": "🦶", "color": "#C9184A" },
+        { "name": "Gel Polish", "price": 6800, "category": 0, "icon": "💅", "color": "#FF4D6D" },
+        { "name": "Nail Art (per nail)", "price": 500, "category": 0, "icon": "✨", "color": "#F48FB1" },
+        { "name": "Lash Lift", "price": 12000, "category": 1, "icon": "👁", "color": "#9D4EDD" },
+        { "name": "Brow Shaping", "price": 3500, "category": 1, "icon": "✏️", "color": "#C77DFF" },
+        { "name": "Lash Extensions", "price": 18000, "category": 1, "icon": "✨", "color": "#7B2CBF" },
+        { "name": "Wash & Blow", "price": 4000, "category": 2, "icon": "💇", "color": "#F72585" },
+        { "name": "Haircut", "price": 5000, "category": 2, "icon": "✂️", "color": "#B5179E" },
+        { "name": "Hair Colour", "price": 18000, "category": 2, "icon": "🎨", "color": "#7209B7" },
+        { "name": "Cuticle Oil", "price": 2900, "category": 3, "icon": "🧴", "color": "#FF8FAB", "stock": 14 },
+        { "name": "Hand Cream", "price": 3500, "category": 3, "icon": "🧴", "color": "#E5989B", "stock": 9 }
+      ]
+    }
+  ]
+}
