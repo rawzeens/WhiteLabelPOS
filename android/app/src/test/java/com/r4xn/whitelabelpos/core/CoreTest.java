@@ -193,10 +193,32 @@ public class CoreTest {
     }
 
     @Test
+    public void demoShopMatchesTheIphoneApp() throws Exception {
+        // The iPhone checks get exactly these numbers for the same time and calendar.
+        List<Catalog> types = Catalog.parse(read("app/catalogs.json"));
+        List<Currency> money = Currency.parse(read("app/currencies.json"));
+        ZoneId utc = ZoneId.of("UTC");
+        long now = java.time.ZonedDateTime.of(2026, 11, 27, 12, 0, 0, 0, utc).toInstant().toEpochMilli();
+        Doc d = Demo.shop(Catalog.find(types, "cafe"), money, now, utc);
+        assertEquals(222, d.sales.size());
+        long gross = 0;
+        int refunded = 0;
+        for (Doc.Sale s : d.sales) {
+            if (s.refunded) refunded++;
+            else gross += s.due;
+        }
+        assertEquals(1, refunded);
+        assertEquals(611027, gross);
+    }
+
+    @Test
     public void colourAndTextRules() {
         assertEquals(Colors.WHITE, Colors.on(0xFF6F4E37));
         assertEquals(Colors.NEAR_BLACK, Colors.on(0xFFFCBF49));
         assertEquals(Colors.WHITE, Colors.on(0xFF15803D));
+        assertEquals(Colors.NEAR_BLACK, Colors.on(0xFFE0457B));
+        assertEquals(0xFFFFDBDB, Colors.soft(0xFFFF0000, 0xFFFFFFFF, false));
+        assertEquals(0xFF383838, Colors.soft(0xFFFFFFFF, 0xFF000000, true));
         assertEquals("KP", Text.initials("Kopi Pagi"));
         assertEquals("LC", Text.initials("Lily & Co"));
         assertEquals("S", Text.initials("segar"));

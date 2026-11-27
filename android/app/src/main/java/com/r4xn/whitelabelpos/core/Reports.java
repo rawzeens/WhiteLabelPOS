@@ -88,7 +88,8 @@ public final class Reports {
         ZonedDateTime start = Instant.ofEpochMilli(dayStart).atZone(zone);
         List<Bar> out = new ArrayList<>();
         for (int h = 6; h <= 23; h++) {
-            long from = start.withHour(h).toInstant().toEpochMilli();
+            // Anything sold before 6:00 is counted in the first bar.
+            long from = h == 6 ? start.toInstant().toEpochMilli() : start.withHour(h).toInstant().toEpochMilli();
             long to = h == 23 ? start.plusDays(1).toInstant().toEpochMilli() : start.withHour(h + 1).toInstant().toEpochMilli();
             out.add(new Bar(h + "", sum(sales, from, to)));
         }

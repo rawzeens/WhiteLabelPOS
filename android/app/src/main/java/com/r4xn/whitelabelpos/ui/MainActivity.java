@@ -131,7 +131,9 @@ public class MainActivity extends BaseActivity {
             TextView label = Kit.text(look, look.t(NAMES[i]), look.caps ? 10 : 11, sel ? (street ? look.page : on) : off, sel ? look.bold : look.medium);
             label.setLetterSpacing(look.tracking);
             label.setPadding(0, look.dp(3), 0, 0);
-            t.addView(label);
+            label.setGravity(Gravity.CENTER);
+            label.setMaxLines(1);
+            t.addView(label, Kit.wrap());
             t.setOnClickListener(v -> open(index));
             tabBar.addView(t, Kit.weight(1));
         }

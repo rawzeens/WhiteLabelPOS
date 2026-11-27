@@ -99,8 +99,6 @@ public class CheckoutActivity extends BaseActivity {
             EditText cash = Kit.moneyField(look, Money.plain(t.due, cur.decimals), received);
             cash.setTextSize(22);
             body.addView(cash, Kit.match());
-            LinearLayout quick = Kit.hbox(this);
-            quick.setPadding(0, look.dp(10), 0, 0);
             List<Long> amounts = new ArrayList<>();
             amounts.add(t.due);
             amounts.addAll(Money.quickCash(t.due, cur.decimals));
@@ -112,7 +110,9 @@ public class CheckoutActivity extends BaseActivity {
                     paint();
                 }));
             }
-            body.addView(Kit.chipRow(look, chips), Kit.match());
+            android.widget.HorizontalScrollView quickRow = Kit.chipRow(look, chips);
+            quickRow.getChildAt(0).setPadding(0, 0, 0, 0);
+            body.addView(quickRow, Kit.match());
             TextView change = Kit.text(look, "", 20, look.ink, look.bold);
             change.setPadding(look.dp(2), look.dp(18), 0, 0);
             body.addView(change);

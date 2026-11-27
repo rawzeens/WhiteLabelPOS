@@ -241,6 +241,7 @@ public final class Styles {
         v.setPadding(l.dp(12), l.dp(12), l.dp(12), l.dp(12));
         LinearLayout top = Kit.hbox(l.c);
         top.setGravity(Gravity.TOP);
+        top.setBaselineAligned(false);
         top.addView(Kit.productIcon(l, p, 22, l.ink), new LinearLayout.LayoutParams(l.dp(30), l.dp(30)));
         TextView name = Kit.text(l, p.name, 15, l.ink, l.medium);
         name.setMaxLines(2);

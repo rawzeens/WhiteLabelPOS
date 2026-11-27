@@ -13,7 +13,7 @@ import java.time.ZoneId;
 
 /**
  * Switches for screenshots, only in debug builds (SPEC section 8):
- * --es demo grocery  --es design midnight  --es open sell|cart|checkout|receipt|orders|products|product|reports|settings|setup0..5
+ * --es demo grocery  --es design midnight  --es open sell|till|cart|checkout|receipt|orders|products|product|reports|settings|setup0..5
  */
 final class Debug {
     private Debug() {
@@ -66,6 +66,9 @@ final class Debug {
             case "cart":
                 Demo.fillCart(s.doc, s.cart);
                 a.startActivity(new Intent(a, CartActivity.class));
+                break;
+            case "till":
+                Demo.fillCart(s.doc, s.cart);
                 break;
             case "checkout":
                 Demo.fillCart(s.doc, s.cart);

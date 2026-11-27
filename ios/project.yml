@@ -1,0 +1,53 @@
+# Xcode project for the iPhone/iPad app. Generate it with:  brew install xcodegen && xcodegen
+# The app name, bundle id and version come from ../whitelabel/build.xcconfig (the white-label build settings).
+name: WhiteLabelPOS
+options:
+  bundleIdPrefix: com.r4xn
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  POSCore:
+    path: POSCore
+targets:
+  WhiteLabelPOS:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug: ../whitelabel/build.xcconfig
+      Release: ../whitelabel/build.xcconfig
+    sources:
+      - path: WhiteLabelPOS
+      # The 5 designs, starter products and currencies, shared with the Android app.
+      - path: ../whitelabel/app/designs.json
+        buildPhase: resources
+      - path: ../whitelabel/app/catalogs.json
+        buildPhase: resources
+      - path: ../whitelabel/app/currencies.json
+        buildPhase: resources
+    dependencies:
+      - package: POSCore
+        product: POSCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(APP_ID)
+        PRODUCT_NAME: WhiteLabelPOS
+        MARKETING_VERSION: $(APP_VERSION)
+        CURRENT_PROJECT_VERSION: $(APP_BUILD)
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: $(APP_NAME)
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Choose a picture to use as your shop's logo."
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.business
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CODE_SIGN_STYLE: Automatic
+schemes:
+  WhiteLabelPOS:
+    build:
+      targets:
+        WhiteLabelPOS: all

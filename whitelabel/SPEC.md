@@ -132,7 +132,7 @@ Reports cover `[from, to)` and use the stored sale values (never recompute old s
 - `byMethod` = Σ due per method (only methods that appear).
 - `top` = products by name: qty = Σ qty, amount = Σ price × qty; sort by qty desc, then amount desc,
   then name. Show 5.
-- Chart: **Today** → one bar per hour 6:00–23:00; **7 days / 30 days** → one bar per local day.
+- Chart: **Today** → one bar per hour 6:00–23:00 (anything before 6:00 goes in the 6:00 bar); **7 days / 30 days** → one bar per local day.
 
 ## 5. The 5 design environments
 
@@ -248,9 +248,20 @@ Debug builds accept switches so screenshots can be taken without tapping:
 |---|---|---|
 | Load demo type | `--es demo grocery` | `-demo grocery` |
 | Use another design | `--es design midnight` | `-design midnight` |
-| Open a screen | `--es open sell\|cart\|checkout\|receipt\|orders\|products\|product\|reports\|settings\|setup0..setup5` | `-screen …` same names |
+| Open a screen | `--es open sell\|till\|cart\|checkout\|receipt\|orders\|products\|product\|reports\|settings\|setup0..setup5` | `-screen …` same names |
 
-With `cart`, `checkout` and `receipt` the cart gets products 0 × 2, 4 × 1, 9 × 1 (those that exist);
+`till` is the Sell screen with the sample cart (shows the in-cart badges, and the cart panel on tablets).
+With `till`, `cart`, `checkout` and `receipt` the cart gets products 0 × 2, 4 × 1, 9 × 1 (those that exist);
 `receipt` completes that cart as a cash sale paying the next multiple of 1000 and shows it.
 `product` opens the edit screen for the first product. `setupN` opens setup step N filled with the
 demo data.
+
+## 9. Details both apps settled while being built
+
+- Typing money: only ASCII digits count; more than 13 whole digits is invalid; with 0 decimals a
+  fraction rounds half up (`7.6` → 8).
+- Colour mixing rounds each channel to the nearest whole number (`soft(#FF0000)` on white = `#FFDBDB`).
+  Luminance uses the 0.03928 cut-off. By this rule the Glow Studio pink `#E0457B` gets dark text.
+- Made-up sales with the same time keep the order they were made in.
+- Refunding a sale twice does nothing. Finishing setup unlocks the PIN for that launch.
+- Restoring a backup from the Welcome screen opens the till straight away.
