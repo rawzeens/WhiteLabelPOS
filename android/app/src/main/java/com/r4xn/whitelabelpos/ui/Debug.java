@@ -55,6 +55,7 @@ final class Debug {
                 break;
             case "reports":
                 a.tab = MainActivity.REPORTS;
+                a.reportDays = 7;
                 break;
             case "settings":
                 a.tab = MainActivity.SETTINGS;

@@ -16,12 +16,42 @@ adb shell am broadcast -a com.android.systemui.demo -e command clock -e hhmm 094
 adb shell am broadcast -a com.android.systemui.demo -e command battery -e level 100 -e plugged false >/dev/null || true
 adb shell am broadcast -a com.android.systemui.demo -e command notifications -e visible false >/dev/null || true
 
+# Slow cloud emulators often show "<some app> isn't responding" over everything. Hide those
+# dialogs, and if one still shows up, press its Wait button before taking a picture.
+adb shell settings put global hide_error_dialogs 1 >/dev/null || true
+adb shell settings put secure anr_show_background 0 >/dev/null || true
+dismiss_dialogs() {
+  for _ in 1 2 3; do
+    adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1 || return 0
+    xy=$(adb shell cat /sdcard/ui.xml 2>/dev/null | python3 -c '
+import re, sys
+xml = sys.stdin.read()
+for rid in ("android:id/aerr_wait", "android:id/aerr_close"):
+    m = re.search(r"resource-id=\"" + re.escape(rid) + r"\"[^>]*bounds=\"\[(\d+),(\d+)\]\[(\d+),(\d+)\]\"", xml)
+    if m:
+        a, b, c, d = map(int, m.groups())
+        print((a + c) // 2, (b + d) // 2)
+        break
+')
+    [ -z "$xy" ] && return 0
+    echo "closing a system 'not responding' box"
+    adb shell input tap $xy
+    sleep 2
+  done
+}
+
 shot() { # file demo design screen [seconds]
   adb shell am start -S -W -n "$ACT" --es demo "$2" --es design "$3" --es open "$4" >/dev/null 2>&1
   sleep "${5:-4}"
+  dismiss_dialogs
   adb exec-out screencap -p > "$OUT/$1.png"
   echo "saved $1"
 }
+
+# Give the home screen time to settle after boot.
+adb shell input keyevent KEYCODE_HOME || true
+sleep 20
+dismiss_dialogs
 
 i=1
 # Each design with the demo shop it suits best.

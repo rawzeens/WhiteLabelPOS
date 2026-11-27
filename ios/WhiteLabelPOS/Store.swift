@@ -31,6 +31,8 @@ final class Store {
     var orderPath: [String] = []
     var productsPath: [ProductRoute] = []
     var settingsPath: [SettingsRoute] = []
+    /// Reports: 0 = today, 1 = 7 days, 2 = 30 days.
+    var reportPeriod = 0
     /// The owner PIN was typed since the app opened.
     var unlocked = false
     /// Opens setup at this step even when the shop is set up (screenshot switch).
@@ -207,6 +209,7 @@ final class Store {
             if let p = doc.products.first { productsPath = [.edit(p.id)] }
         case "reports":
             tab = .reports
+            reportPeriod = 1
         case "settings":
             tab = .settings
             unlocked = true

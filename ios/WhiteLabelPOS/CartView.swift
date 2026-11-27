@@ -11,6 +11,7 @@ struct CartScreen: View {
             .background(look.page.ignoresSafeArea())
             .navigationTitle("This sale")
             .inlineTitle()
+            .hideTabBar()
     }
 }
 

@@ -137,6 +137,22 @@ struct ReceiptScreen: View {
         .navigationTitle(afterSale ? "Sale complete" : "Receipt")
         .inlineTitle()
         .navigationBarBackButtonHiddenIfAfterSale(afterSale)
+        .hideTabBar()
+    }
+
+    @ViewBuilder private func shareButton(_ sale: Sale) -> some View {
+        if let picture {
+            ShareLink(item: picture, preview: SharePreview("Receipt #\(sale.number)", image: picture)) {
+                HStack(spacing: 8) {
+                    Image(systemName: "square.and.arrow.up")
+                    LText("Share receipt", 16, .medium, caps: true)
+                }
+                .foregroundStyle(look.ink)
+                .frame(maxWidth: .infinity, minHeight: 50)
+                .background(look.raised, in: look.buttonShape)
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     private func content(_ sale: Sale) -> some View {
@@ -158,31 +174,34 @@ struct ReceiptScreen: View {
                 }
                 ReceiptPaper(sale: sale, doc: store.doc, currency: store.currency)
                     .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
-                if let picture {
-                    ShareLink(item: picture, preview: SharePreview("Receipt #\(sale.number)", image: picture)) {
-                        HStack(spacing: 8) {
-                            Image(systemName: "square.and.arrow.up")
-                            LText("Share receipt", 16, .medium, caps: true)
+                // After a sale, Share and New sale sit at the bottom of the screen instead.
+                if !afterSale {
+                    shareButton(sale)
+                    if !sale.refunded {
+                        SoftButton("Refund this sale", icon: "arrow.uturn.backward", color: look.bad) {
+                            if store.doc.pin.isEmpty { confirmRefund = true } else { askPin = true }
                         }
-                        .foregroundStyle(look.ink)
-                        .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(look.raised, in: look.buttonShape)
+                    } else {
+                        LText("Refunded \(Self.refundText(sale))", 14, color: look.bad)
                     }
-                    .buttonStyle(.plain)
-                }
-                if afterSale {
-                    MainButton("New sale", icon: "plus") { store.sellPath = [] }
-                } else if !sale.refunded {
-                    SoftButton("Refund this sale", icon: "arrow.uturn.backward", color: look.bad) {
-                        if store.doc.pin.isEmpty { confirmRefund = true } else { askPin = true }
-                    }
-                } else {
-                    LText("Refunded \(Self.refundText(sale))", 14, color: look.bad)
                 }
             }
             .padding(16)
             .frame(maxWidth: 520)
             .frame(maxWidth: .infinity)
+        }
+        .safeAreaInset(edge: .bottom) {
+            if afterSale {
+                HStack(spacing: 10) {
+                    shareButton(sale)
+                    MainButton("New sale", icon: "plus") { store.sellPath = [] }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .frame(maxWidth: 520)
+                .frame(maxWidth: .infinity)
+                .background(look.page.opacity(0.96))
+            }
         }
         .onAppear { draw(sale) }
         .onChange(of: sale) { _, s in draw(s) }

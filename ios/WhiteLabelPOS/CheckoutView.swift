@@ -65,6 +65,7 @@ struct CheckoutView: View {
         }
         .navigationTitle("Charge")
         .inlineTitle()
+        .hideTabBar()
     }
 
     private var cashPart: some View {

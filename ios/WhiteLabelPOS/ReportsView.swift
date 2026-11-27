@@ -6,7 +6,7 @@ import SwiftUI
 struct ReportsView: View {
     @Environment(Store.self) private var store
     @Environment(\.look) private var look
-    @State private var period = 0
+    private var period: Int { store.reportPeriod }
 
     private static let periods = ["Today", "7 days", "30 days"]
 
@@ -26,7 +26,7 @@ struct ReportsView: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: look.design.chips == "underline" ? 14 : 8) {
                     ForEach(0..<3) { i in
-                        ChipView(title: Self.periods[i], selected: period == i) { period = i }
+                        ChipView(title: Self.periods[i], selected: period == i) { store.reportPeriod = i }
                     }
                 }
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {

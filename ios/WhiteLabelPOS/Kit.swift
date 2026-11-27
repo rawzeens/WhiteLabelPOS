@@ -506,6 +506,15 @@ extension View {
         #endif
     }
 
+    /// Cart, payment and receipt get the whole screen, so the main buttons are never under the tab bar.
+    func hideTabBar() -> some View {
+        #if os(iOS)
+        return toolbar(.hidden, for: .tabBar)
+        #else
+        return self
+        #endif
+    }
+
     func hideNavBar() -> some View {
         #if os(iOS)
         return toolbar(.hidden, for: .navigationBar)
