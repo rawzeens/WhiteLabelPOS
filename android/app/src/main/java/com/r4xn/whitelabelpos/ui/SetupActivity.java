@@ -281,7 +281,7 @@ public class SetupActivity extends BaseActivity {
             Look dl = new Look(this, Design.find(store.designs, demo.brand.design), demo.brand);
             LinearLayout card = Kit.vbox(this);
             View mini = Styles.miniSell(dl, store, demo, 2, true);
-            card.addView(mini, new LinearLayout.LayoutParams(l.dp(230), -2));
+            card.addView(mini, new LinearLayout.LayoutParams(l.dp(270), -2));
             TextView name = Kit.text(l, Design.find(store.designs, demo.brand.design).name, 14, l.ink, l.bold);
             name.setPadding(l.dp(4), l.dp(8), 0, 0);
             card.addView(name);

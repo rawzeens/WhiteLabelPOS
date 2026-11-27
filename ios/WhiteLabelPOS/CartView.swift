@@ -109,16 +109,23 @@ struct CartLineRow: View {
 
     var body: some View {
         let product = store.doc.product(line.product)
-        HStack(spacing: 10) {
-            if let product {
-                ProductIcon(product: product, size: 38)
+        // Two rows, so the name always has room, even in the narrow cart panel on iPad.
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(alignment: .top, spacing: 10) {
+                if let product {
+                    ProductIcon(product: product, size: 34)
+                }
+                LText(line.name, 15, .semibold, caps: true)
+                    .lineLimit(2)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
+                LText(store.money(line.price * line.qty), 15, .semibold)
+                    .fixedSize()
             }
-            VStack(alignment: .leading, spacing: 2) {
-                LText(line.name, 15, .semibold, caps: true).lineLimit(2)
-                LText(store.money(line.price), 13, color: look.muted)
-            }
-            Spacer(minLength: 6)
             HStack(spacing: 0) {
+                LText("\(store.money(line.price)) each", 13, color: look.muted)
+                    .lineLimit(1)
+                Spacer(minLength: 6)
                 stepButton("minus") { store.cart.set(line.product, qty: line.qty - 1) }
                 LText("\(line.qty)", 16, .bold).frame(minWidth: 30)
                 stepButton("plus") {
@@ -126,8 +133,7 @@ struct CartLineRow: View {
                 }
                 .opacity(product.map { store.doc.canAddOne($0, cart: store.cart) } ?? false ? 1 : 0.35)
             }
-            LText(store.money(line.price * line.qty), 15, .semibold)
-                .frame(minWidth: 74, alignment: .trailing)
+            .padding(.leading, product == nil ? 0 : 44)
         }
         .padding(.vertical, 8)
     }
