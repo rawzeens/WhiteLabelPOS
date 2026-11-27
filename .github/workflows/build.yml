@@ -4,6 +4,8 @@ on:
   push:
     branches: [dev, main]
     tags: ["v*"]
+    # Changing only the readme or the screenshots doesn't need a new build.
+    paths-ignore: ["README.md", "docs/**"]
   pull_request:
   workflow_dispatch:
 
