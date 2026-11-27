@@ -12,7 +12,32 @@ Two native apps, one set of rules:
 A backup made on one opens on the other. Both apps read the same design, product and currency
 files and pass the same money tests (`whitelabel/`).
 
-<!-- SCREENSHOTS -->
+## Screenshots
+
+The same till, set up for five different shops, one in each design. iPhone on top, Android below.
+
+| Fresh | Midnight | Café | Street | Atelier |
+|:-:|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/iphone/fresh-sell.jpg" width="160"> | <img src="docs/screenshots/iphone/midnight-sell.jpg" width="160"> | <img src="docs/screenshots/iphone/cafe-sell.jpg" width="160"> | <img src="docs/screenshots/iphone/street-sell.jpg" width="160"> | <img src="docs/screenshots/iphone/atelier-sell.jpg" width="160"> |
+| <img src="docs/screenshots/android/fresh-sell.jpg" width="160"> | <img src="docs/screenshots/android/midnight-sell.jpg" width="160"> | <img src="docs/screenshots/android/cafe-sell.jpg" width="160"> | <img src="docs/screenshots/android/street-sell.jpg" width="160"> | <img src="docs/screenshots/android/atelier-sell.jpg" width="160"> |
+
+**Setup**: the owner brands the till in five steps, with a live preview in their own name and colours.
+
+| Welcome | Logo & colours | Pick a design | Money & receipt | Finish |
+|:-:|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/iphone/welcome.jpg" width="160"> | <img src="docs/screenshots/iphone/setup-colours.jpg" width="160"> | <img src="docs/screenshots/iphone/setup-design.jpg" width="160"> | <img src="docs/screenshots/iphone/setup-money.jpg" width="160"> | <img src="docs/screenshots/iphone/setup-finish.jpg" width="160"> |
+
+**Selling**
+
+| Sale | Payment | Receipt | Reports | Settings |
+|:-:|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/android/fresh-cart.jpg" width="160"> | <img src="docs/screenshots/android/midnight-checkout.jpg" width="160"> | <img src="docs/screenshots/android/atelier-receipt.jpg" width="160"> | <img src="docs/screenshots/android/cafe-reports.jpg" width="160"> | <img src="docs/screenshots/android/street-settings.jpg" width="160"> |
+| <img src="docs/screenshots/iphone/cafe-cart.jpg" width="160"> | <img src="docs/screenshots/iphone/street-checkout.jpg" width="160"> | <img src="docs/screenshots/iphone/fresh-receipt.jpg" width="160"> | <img src="docs/screenshots/iphone/reports.jpg" width="160"> | <img src="docs/screenshots/iphone/settings.jpg" width="160"> |
+
+**Tablets** keep the sale open next to the products.
+
+<img src="docs/screenshots/iphone/ipad-cafe.jpg" width="49%"> <img src="docs/screenshots/android/tablet-street.jpg" width="49%">
+
 
 ## The 5 design environments
 

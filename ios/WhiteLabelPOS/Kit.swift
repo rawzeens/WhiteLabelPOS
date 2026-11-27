@@ -122,6 +122,8 @@ struct SoftButton: View {
                     Image(systemName: icon).font(.system(size: 15, weight: .medium))
                 }
                 LText(title, 16, .medium, color: color ?? look.ink, caps: true)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
             .foregroundStyle(color ?? look.ink)
             .frame(maxWidth: .infinity, minHeight: 50)
